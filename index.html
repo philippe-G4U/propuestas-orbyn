@@ -737,11 +737,11 @@
         }
         .fw-node .fw-sub { display: block; font-weight: 400; opacity: 0.85; margin-top: 2px; font-size: 0.85em; }
         .fw-valion { left: 50%; top: 0; transform: translateX(-50%); background: var(--valion-navy); color: #fff; }
-        .fw-start { left: 15%; top: 28%; transform: translateX(-50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
-        .fw-appraisal { right: 15%; top: 28%; transform: translateX(50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
-        .fw-boost { left: 0; top: 55%; transform: translateY(-50%); background: var(--orbyn-blue); color: #fff; }
-        .fw-dozen { left: 50%; top: 55%; transform: translate(-50%, -50%); background: var(--dozen-teal); color: #fff; }
+        .fw-start { left: 18%; top: 25%; transform: translateX(-50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-appraisal { right: 18%; top: 25%; transform: translateX(50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-dozen { left: 0; top: 55%; transform: translateY(-50%); background: var(--dozen-teal); color: #fff; }
         .fw-ff { right: 0; top: 55%; transform: translateY(-50%); background: var(--ff-blue); color: #fff; }
+        .fw-boost { left: 50%; bottom: 0; transform: translateX(-50%); background: var(--orbyn-blue); color: #fff; }
         /* SVG arrows */
         .flywheel-flow svg {
             position: absolute;
@@ -999,44 +999,48 @@
             <h2 class="reveal" style="text-align: center;">Flywheel <span class="accent">Interno</span></h2>
             <div class="flywheel-container reveal-scale">
                 <div class="flywheel-flow">
-                    <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid meet">
+                    <svg viewBox="0 0 700 450" preserveAspectRatio="xMidYMid meet">
                         <defs>
                             <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
                                 <polygon points="0 0, 8 3, 0 6" fill="#6b6b6b"/>
                             </marker>
                         </defs>
-                        <!-- Valion → Start (left branch) -->
-                        <line x1="310" y1="55" x2="140" y2="105" class="fw-arrow-line"/>
-                        <!-- Valion → Appraisal (right branch) -->
-                        <line x1="390" y1="55" x2="560" y2="105" class="fw-arrow-line"/>
+                        <!-- Valion → Start (left) -->
+                        <line x1="305" y1="55" x2="145" y2="100" class="fw-arrow-line"/>
+                        <!-- Valion → Appraisal (right) -->
+                        <line x1="395" y1="55" x2="555" y2="100" class="fw-arrow-line"/>
 
-                        <!-- Start → Orbyn Boost -->
-                        <line x1="90" y1="140" x2="75" y2="195" class="fw-arrow-line"/>
-                        <text x="28" y="172" class="fw-arrow-label">Fin. p&uacute;blica</text>
                         <!-- Start → Dozen -->
-                        <line x1="145" y1="140" x2="310" y2="195" class="fw-arrow-line"/>
-                        <text x="185" y="168" class="fw-arrow-label">Crowdfunding</text>
+                        <line x1="115" y1="135" x2="80" y2="220" class="fw-arrow-line"/>
+                        <text x="45" y="182" class="fw-arrow-label">Crowdfunding</text>
+                        <!-- Start → Dozen (also possible) - not needed, direct arrow suffices -->
 
                         <!-- Appraisal → Fellow Funders -->
-                        <line x1="580" y1="140" x2="600" y2="195" class="fw-arrow-line"/>
-                        <text x="590" y="172" class="fw-arrow-label">Econ. real</text>
+                        <line x1="585" y1="135" x2="615" y2="220" class="fw-arrow-line"/>
+                        <text x="600" y="182" class="fw-arrow-label">Econ. real</text>
 
-                        <!-- Cross-sell inversores FF ↔ Dozen -->
-                        <line x1="195" y1="245" x2="540" y2="245" class="fw-arrow-line"/>
-                        <text x="300" y="268" class="fw-arrow-label">Cross-sell inversores</text>
+                        <!-- Cross-sell inversores Dozen ↔ FF -->
+                        <line x1="160" y1="260" x2="545" y2="260" class="fw-arrow-line"/>
+                        <text x="290" y="280" class="fw-arrow-label">Cross-sell inversores</text>
 
-                        <!-- Dashed line: Start → Dozen + Boost (y/o) -->
+                        <!-- Dozen → Orbyn Boost -->
+                        <line x1="100" y1="295" x2="290" y2="375" class="fw-arrow-line"/>
+                        <text x="130" y="345" class="fw-arrow-label">Fin. p&uacute;blica</text>
+
+                        <!-- FF → Orbyn Boost -->
+                        <line x1="600" y1="295" x2="420" y2="375" class="fw-arrow-line"/>
+                        <text x="490" y="345" class="fw-arrow-label">Fin. p&uacute;blica</text>
                     </svg>
                     <div class="fw-node fw-valion">Valion<span class="fw-sub">Valoraci&oacute;n con IA</span></div>
                     <div class="fw-node fw-start">Start<span class="fw-sub">Startups</span></div>
                     <div class="fw-node fw-appraisal">Appraisal<span class="fw-sub">Empresas maduras</span></div>
-                    <div class="fw-node fw-boost">Orbyn Boost<span class="fw-sub">Financiaci&oacute;n P&uacute;blica</span></div>
                     <div class="fw-node fw-dozen">Dozen<span class="fw-sub">Crowdfunding Startups</span></div>
                     <div class="fw-node fw-ff">Fellow Funders<span class="fw-sub">Inmob, Agro, PYMEs</span></div>
+                    <div class="fw-node fw-boost">Orbyn Boost<span class="fw-sub">Financiaci&oacute;n P&uacute;blica</span></div>
                 </div>
             </div>
             <p class="reveal" style="text-align: center; max-width: 680px; margin: clamp(0.5rem, 1.5vh, 1rem) auto 0; font-size: var(--small-size);">
-                <strong>Valion valora la empresa.</strong> Start (startups) deriva a Orbyn Boost (financiaci&oacute;n p&uacute;blica) y/o Dozen (crowdfunding startups). Appraisal (empresas maduras) deriva a <strong>Fellow Funders</strong> (inmobiliario, agro, PYMEs). El cross-sell de inversores conecta ambos lados &mdash; un ecosistema cerrado que ning&uacute;n competidor puede replicar.
+                <strong>Valion valora la empresa.</strong> Start deriva a <strong>Dozen</strong> (crowdfunding startups). Appraisal deriva a <strong>Fellow Funders</strong> (inmobiliario, agro, PYMEs). <strong>Orbyn Boost</strong> es transversal: cualquier empresa del ecosistema puede acceder a financiaci&oacute;n p&uacute;blica. El cross-sell de inversores conecta ambos lados &mdash; un ciclo cerrado que ning&uacute;n competidor puede replicar.
             </p>
         </div>
         <span class="slide-num">05</span>
