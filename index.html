@@ -737,9 +737,11 @@
         }
         .fw-node .fw-sub { display: block; font-weight: 400; opacity: 0.85; margin-top: 2px; font-size: 0.85em; }
         .fw-valion { left: 50%; top: 0; transform: translateX(-50%); background: var(--valion-navy); color: #fff; }
-        .fw-boost { left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--orbyn-blue); color: #fff; }
-        .fw-ff { left: 0; bottom: 0; background: var(--ff-blue); color: #fff; }
-        .fw-dozen { right: 0; bottom: 0; background: var(--dozen-teal); color: #fff; }
+        .fw-start { left: 15%; top: 28%; transform: translateX(-50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-appraisal { right: 15%; top: 28%; transform: translateX(50%); background: var(--valion-navy); color: #fff; opacity: 0.8; font-size: clamp(0.5rem, 0.75vw, 0.65rem); }
+        .fw-boost { left: 0; top: 55%; transform: translateY(-50%); background: var(--orbyn-blue); color: #fff; }
+        .fw-dozen { left: 50%; top: 55%; transform: translate(-50%, -50%); background: var(--dozen-teal); color: #fff; }
+        .fw-ff { right: 0; top: 55%; transform: translateY(-50%); background: var(--ff-blue); color: #fff; }
         /* SVG arrows */
         .flywheel-flow svg {
             position: absolute;
@@ -997,36 +999,44 @@
             <h2 class="reveal" style="text-align: center;">Flywheel <span class="accent">Interno</span></h2>
             <div class="flywheel-container reveal-scale">
                 <div class="flywheel-flow">
-                    <svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid meet">
+                    <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid meet">
                         <defs>
                             <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
                                 <polygon points="0 0, 8 3, 0 6" fill="#6b6b6b"/>
                             </marker>
                         </defs>
-                        <!-- Valion → Orbyn Boost: Valoracion → Financiacion publica -->
-                        <line x1="350" y1="65" x2="350" y2="155" class="fw-arrow-line"/>
-                        <text x="358" y="115" class="fw-arrow-label">Valoraci&oacute;n realizada</text>
+                        <!-- Valion → Start (left branch) -->
+                        <line x1="310" y1="55" x2="140" y2="105" class="fw-arrow-line"/>
+                        <!-- Valion → Appraisal (right branch) -->
+                        <line x1="390" y1="55" x2="560" y2="105" class="fw-arrow-line"/>
 
-                        <!-- Orbyn Boost → Fellow Funders: Agro/Inmobiliario -->
-                        <line x1="290" y1="220" x2="130" y2="290" class="fw-arrow-line"/>
-                        <text x="130" y="260" class="fw-arrow-label">Agro / Inmobiliario</text>
+                        <!-- Start → Orbyn Boost -->
+                        <line x1="90" y1="140" x2="75" y2="195" class="fw-arrow-line"/>
+                        <text x="28" y="172" class="fw-arrow-label">Fin. p&uacute;blica</text>
+                        <!-- Start → Dozen -->
+                        <line x1="145" y1="140" x2="310" y2="195" class="fw-arrow-line"/>
+                        <text x="185" y="168" class="fw-arrow-label">Crowdfunding</text>
 
-                        <!-- Orbyn Boost → Dozen: Startups tech -->
-                        <line x1="410" y1="220" x2="565" y2="290" class="fw-arrow-line"/>
-                        <text x="460" y="260" class="fw-arrow-label">Startups tech</text>
+                        <!-- Appraisal → Fellow Funders -->
+                        <line x1="580" y1="140" x2="600" y2="195" class="fw-arrow-line"/>
+                        <text x="590" y="172" class="fw-arrow-label">Econ. real</text>
 
-                        <!-- Fellow Funders ↔ Dozen: Cross-sell inversores -->
-                        <line x1="170" y1="320" x2="555" y2="320" class="fw-arrow-line"/>
-                        <text x="300" y="345" class="fw-arrow-label">Cross-sell inversores</text>
+                        <!-- Cross-sell inversores FF ↔ Dozen -->
+                        <line x1="195" y1="245" x2="540" y2="245" class="fw-arrow-line"/>
+                        <text x="300" y="268" class="fw-arrow-label">Cross-sell inversores</text>
+
+                        <!-- Dashed line: Start → Dozen + Boost (y/o) -->
                     </svg>
                     <div class="fw-node fw-valion">Valion<span class="fw-sub">Valoraci&oacute;n con IA</span></div>
+                    <div class="fw-node fw-start">Start<span class="fw-sub">Startups</span></div>
+                    <div class="fw-node fw-appraisal">Appraisal<span class="fw-sub">Empresas maduras</span></div>
                     <div class="fw-node fw-boost">Orbyn Boost<span class="fw-sub">Financiaci&oacute;n P&uacute;blica</span></div>
-                    <div class="fw-node fw-ff">Fellow Funders<span class="fw-sub">Econom&iacute;a Real</span></div>
-                    <div class="fw-node fw-dozen">Dozen<span class="fw-sub">Equity Startups</span></div>
+                    <div class="fw-node fw-dozen">Dozen<span class="fw-sub">Crowdfunding Startups</span></div>
+                    <div class="fw-node fw-ff">Fellow Funders<span class="fw-sub">Inmob, Agro, PYMEs</span></div>
                 </div>
             </div>
             <p class="reveal" style="text-align: center; max-width: 680px; margin: clamp(0.5rem, 1.5vh, 1rem) auto 0; font-size: var(--small-size);">
-                <strong>Valion valora la empresa.</strong> Orbyn Boost gestiona la financiaci&oacute;n p&uacute;blica. Seg&uacute;n el perfil, la inversi&oacute;n privada va a <strong>Fellow Funders</strong> (agro/inmobiliario) o <strong>Dozen</strong> (startups tech). Un ecosistema cerrado donde cada marca alimenta a las dem&aacute;s &mdash; y ning&uacute;n competidor puede replicar.
+                <strong>Valion valora la empresa.</strong> Start (startups) deriva a Orbyn Boost (financiaci&oacute;n p&uacute;blica) y/o Dozen (crowdfunding startups). Appraisal (empresas maduras) deriva a <strong>Fellow Funders</strong> (inmobiliario, agro, PYMEs). El cross-sell de inversores conecta ambos lados &mdash; un ecosistema cerrado que ning&uacute;n competidor puede replicar.
             </p>
         </div>
         <span class="slide-num">05</span>
@@ -1299,7 +1309,7 @@
                             Miles de PYMEs y startups buscan &ldquo;ENISA&rdquo;, &ldquo;subvenciones para empresas&rdquo;, &ldquo;ayudas innovacion&rdquo; cada mes &mdash; terminos con alta intencion comercial. <strong>Orbyn Boost no aparece en ninguna.</strong> Ese trafico se va a consultoras genericas con webs debiles.
                         </p>
                         <p style="font-size: var(--small-size); margin-top: clamp(0.3rem, 0.5vh, 0.5rem);">
-                            Cada lead captado por ENISA es un candidato natural para Dozen (equity), Fellow Funders (economia real) o Valion (valoracion). El coste marginal de cross-sell es casi cero. <strong>Orbyn Boost no es solo una marca: es el motor de captacion de todo el grupo.</strong>
+                            Cada lead captado por ENISA es un candidato natural para Dozen (crowdfunding startups), Fellow Funders (economia real) o Valion (valoracion). El coste marginal de cross-sell es casi cero. <strong>Orbyn Boost no es solo una marca: es el motor de captacion de todo el grupo.</strong>
                         </p>
                     </div>
                 </div>
@@ -1389,7 +1399,7 @@
                 Inversion en<br><span class="accent">startups</span>
             </h1>
             <p class="reveal" style="margin-top: clamp(0.5rem, 1vh, 0.8rem); max-width: 450px; margin-left: auto; margin-right: auto;">
-                Equity crowdfunding con exits reales y ventaja fiscal.
+                Crowdfunding de startups con exits reales y ventaja fiscal.
             </p>
         </div>
         <span class="slide-num">16</span>
@@ -1458,7 +1468,7 @@
                 <div class="phase-card">
                     <div class="phase-label" style="color: var(--dozen-accent);">Abr &mdash; May</div>
                     <div class="phase-title">Foundation</div>
-                    <div class="phase-detail">Analisis competitivo plataformas equity &middot; Segmentacion inversores (retail, HNWI, FO, inversores extranjeros) &middot; Posicionamiento triple: &ldquo;exits reales + filtro del 2% + ventaja fiscal&rdquo; &middot; Arquitectura funnels por perfil</div>
+                    <div class="phase-detail">Analisis competitivo plataformas crowdfunding &middot; Segmentacion inversores (retail, HNWI, FO, inversores extranjeros) &middot; Posicionamiento triple: &ldquo;exits reales + filtro del 2% + ventaja fiscal&rdquo; &middot; Arquitectura funnels por perfil</div>
                 </div>
                 <div class="phase-card">
                     <div class="phase-label" style="color: var(--dozen-accent);">Jun &mdash; Sep</div>
